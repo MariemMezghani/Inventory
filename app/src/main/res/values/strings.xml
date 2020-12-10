@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Inventory</string>
+    <string name="email_text">email</string>
+    <string name="pass_text">password</string>
+    <string name="login_text">LOGIN</string>
+    <string name="forgot_password_text">FORGOT PASSWORD?</string>
+    <string name="or_text">OR</string>
+    <string name="register_text">New User? Register</string>
+</resources>
