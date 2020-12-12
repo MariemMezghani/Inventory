@@ -1,9 +1,17 @@
 <resources>
     <string name="app_name">Inventory</string>
+
+    <!-- login screen strings -->
     <string name="email_text">email</string>
     <string name="pass_text">password</string>
     <string name="login_text">LOGIN</string>
     <string name="forgot_password_text">FORGOT PASSWORD?</string>
     <string name="or_text">OR</string>
     <string name="register_text">New User? Register</string>
+
+    <!-- OnBoarding Screens strings -->
+    <string name="welcome_text">Welcome to Inventory!</string>
+    <string name="first_screen_description">easiest way to do the inventory of your store or house!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
