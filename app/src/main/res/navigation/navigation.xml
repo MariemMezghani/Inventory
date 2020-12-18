@@ -10,10 +10,22 @@
         android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_viewPagerFragment"
-            app:destination="@id/viewPagerFragment" />
+            app:destination="@id/viewPagerFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
         android:name="com.github.mariemmezghani.inventory.OnBoarding.ViewPagerFragment"
-        android:label="ViewPagerFragment" />
+        android:label="ViewPagerFragment" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 </navigation>

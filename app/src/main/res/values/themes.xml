@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Inventory" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <!-- Base application theme. -->m
+    <style name="Theme.Inventory" parent="Theme.AppCompat.Light">
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/color_primary</item>
@@ -10,7 +11,10 @@
         <item name="colorSecondaryVariant">@color/yellow</item>
         <item name="colorOnSecondary">@color/yellow</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+
     </style>
+
+
+
 </resources>

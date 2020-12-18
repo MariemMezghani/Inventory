@@ -15,7 +15,7 @@ class ViewPagerFragment: Fragment() {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentViewPagerBinding>(
             inflater, R.layout.fragment_view_pager, container, false)
-        val fragmentList= arrayListOf<Fragment>(FirstScreen())
+        val fragmentList= arrayListOf<Fragment>(FirstScreen(), SecondScreen(), ThirdScreen())
         val adapter=ViewPagerAdapter(fragmentList,requireActivity().supportFragmentManager,lifecycle)
         binding.viewPager.adapter=adapter
         return binding.root

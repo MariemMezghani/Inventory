@@ -14,4 +14,9 @@
     <string name="first_screen_description">easiest way to do the inventory of your store or house!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="second_screen_text">Add your products!</string>
+    <string name="second_screen_description_text">Press the add button to add a new product to your inventory list</string>
+    <string name="third_screen_description">select a product from your list to update the image, quantity or description</string>
+    <string name="third_screen_text">Update your product details</string>
+    <string name="logout">LogOut</string>
 </resources>
