@@ -40,7 +40,6 @@ class DatabaseTest {
     @Throws(Exception::class)
      fun insertTest() {
         val product = Product()
-        productDao.insert(product)
-
+       // productDao.insert(product)
     }
 }

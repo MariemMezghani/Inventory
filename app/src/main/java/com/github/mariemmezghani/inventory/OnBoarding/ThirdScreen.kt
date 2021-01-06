@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.github.mariemmezghani.inventory.R
 import com.github.mariemmezghani.inventory.databinding.FragmentFirstScreenBinding
 import com.github.mariemmezghani.inventory.databinding.FragmentSecondScreenBinding
@@ -19,8 +20,11 @@ class ThirdScreen : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentThirdScreenBinding>(
-            inflater, R.layout.fragment_third_screen, container, false
-        )
+            inflater, R.layout.fragment_third_screen, container, false)
+
+        binding.startButton.setOnClickListener{ view:View ->
+            view.findNavController().navigate(ViewPagerFragmentDirections.actionViewPagerFragmentToProductsListFragment())
+        }
         return binding.root
     }
 

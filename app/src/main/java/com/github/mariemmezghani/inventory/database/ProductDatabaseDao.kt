@@ -1,15 +1,12 @@
 package com.github.mariemmezghani.inventory.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
-
+import androidx.room.*
 
 @Dao
-interface ProductDatabaseDao {
-    @Insert
+interface
+ProductDatabaseDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(product:Product)
 
     @Update

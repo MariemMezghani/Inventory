@@ -19,4 +19,6 @@
     <string name="third_screen_description">select a product from your list to update the image, quantity or description</string>
     <string name="third_screen_text">Update your product details</string>
     <string name="logout">LogOut</string>
+    <string name="start_button">Start</string>
+    <string name="save_button">save</string>
 </resources>
