@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.github.mariemmezghani.inventory.database.ProductDatabase
@@ -38,6 +39,13 @@ class ProductsListFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.viewModel = productViewModel
+
+        //adapter
+        val adapter = ProductListAdapter()
+        binding.recyclerview.adapter=adapter
+        productViewModel.products.observe(viewLifecycleOwner, Observer{it?.let{
+        adapter.submitList(it)}
+        })
 
         return binding.root
     }
