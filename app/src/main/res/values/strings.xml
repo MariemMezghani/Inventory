@@ -21,4 +21,14 @@
     <string name="logout">LogOut</string>
     <string name="start_button">Start</string>
     <string name="save_button">save</string>
+    <string name="Next_button">Next</string>
+    <string name="product_name">Product</string>
+    <string name="quantity_textview">Quantity</string>
+    <string name="stock_price">Stock price</string>
+    <string name="description_text">Description</string>
+    <string name="product_example">Ex: pen</string>
+    <string name="quantity_example">Ex: 10</string>
+    <string name="stock_price_example">Ex: 3.5</string>
+    <string name="description_example">Ex: black pen</string>
+    <string name="cancel_button">Cancel</string>
 </resources>

@@ -18,6 +18,10 @@ class ProductViewModel(val database: ProductDatabaseDao) : ViewModel() {
 
     val navigateToProductsList: LiveData<Boolean>
         get() = _navigateToProductsList
+    private val _cancelNavigation = MutableLiveData<Boolean>()
+
+    val cancelNavigation:LiveData<Boolean>
+    get()=_cancelNavigation
 
     private suspend fun insert(product: Product) {
         database.insert(product)
@@ -32,9 +36,15 @@ class ProductViewModel(val database: ProductDatabaseDao) : ViewModel() {
 
         }
     }
+    fun onCancel(){
+        _cancelNavigation.value=true
+    }
 
     fun doneNavigation() {
         _navigateToProductsList.value = false
+    }
+    fun navigationCancelled(){
+        _cancelNavigation.value=false
     }
 
     fun formatProducts(products: List<Product>?): String {

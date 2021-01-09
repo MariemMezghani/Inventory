@@ -11,29 +11,8 @@
         android:label="LoginFragment"
         tools:layout = "@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_viewPagerFragment"
-            app:destination="@id/viewPagerFragment"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/slide_left"
-            app:popExitAnim="@anim/nav_default_exit_anim"
-            />
-    </fragment>
-    <fragment
-        android:id="@+id/viewPagerFragment"
-        android:name="com.github.mariemmezghani.inventory.OnBoarding.ViewPagerFragment"
-        android:label="ViewPagerFragment"
-        tools:layout= "@layout/fragment_view_pager">
-        <action
-            android:id="@+id/action_viewPagerFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/nav_default_enter_anim"
-            app:popExitAnim="@anim/nav_default_exit_anim" />
-        <action
-            android:id="@+id/action_viewPagerFragment_to_productsListFragment"
-            app:destination="@id/productsListFragment" />
+            android:id="@+id/action_loginFragment_to_firstScreen"
+            app:destination="@id/firstScreen" />
     </fragment>
     <fragment
         android:id="@+id/productsListFragment"
@@ -51,6 +30,33 @@
         tools:layout="@layout/fragment_product_detail" >
         <action
             android:id="@+id/action_productDetailFragment_to_productsListFragment"
+            app:destination="@id/productsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstScreen"
+        android:name="com.github.mariemmezghani.inventory.OnBoarding.FirstScreen"
+        android:label="FirstScreen"
+        tools:layout="@layout/fragment_first_screen">
+        <action
+            android:id="@+id/action_firstScreen_to_secondScreen"
+            app:destination="@id/secondScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondScreen"
+        android:name="com.github.mariemmezghani.inventory.OnBoarding.SecondScreen"
+        android:label="SecondScreen"
+        tools:layout="@layout/fragment_second_screen">
+        <action
+            android:id="@+id/action_secondScreen_to_thirdScreen"
+            app:destination="@id/thirdScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdScreen"
+        android:name="com.github.mariemmezghani.inventory.OnBoarding.ThirdScreen"
+        android:label="ThirdScreen"
+        tools:layout="@layout/fragment_third_screen">
+        <action
+            android:id="@+id/action_thirdScreen_to_productsListFragment"
             app:destination="@id/productsListFragment" />
     </fragment>
 </navigation>

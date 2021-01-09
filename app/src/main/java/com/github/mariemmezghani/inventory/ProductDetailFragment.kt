@@ -52,6 +52,13 @@ class ProductDetailFragment : Fragment() {
             }
 
         })
+        productViewModel.cancelNavigation.observe(viewLifecycleOwner, Observer {
+            if (it==true){
+                this.findNavController().navigate(ProductDetailFragmentDirections.actionProductDetailFragmentToProductsListFragment())
+
+            }
+            productViewModel.navigationCancelled()
+        })
         return binding.root
     }
 

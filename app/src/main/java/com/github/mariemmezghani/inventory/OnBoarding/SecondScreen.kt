@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.github.mariemmezghani.inventory.R
 import com.github.mariemmezghani.inventory.databinding.FragmentFirstScreenBinding
 import com.github.mariemmezghani.inventory.databinding.FragmentSecondScreenBinding
@@ -20,6 +21,9 @@ class SecondScreen : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentSecondScreenBinding>(
             inflater, R.layout.fragment_second_screen, container, false
         )
+        binding.nextButton2.setOnClickListener{view:View ->
+            view.findNavController().navigate(SecondScreenDirections.actionSecondScreenToThirdScreen())
+        }
         return binding.root
     }
 

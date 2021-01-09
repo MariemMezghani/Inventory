@@ -23,7 +23,7 @@ class ThirdScreen : Fragment() {
             inflater, R.layout.fragment_third_screen, container, false)
 
         binding.startButton.setOnClickListener{ view:View ->
-            view.findNavController().navigate(ViewPagerFragmentDirections.actionViewPagerFragmentToProductsListFragment())
+            view.findNavController().navigate(ThirdScreenDirections.actionThirdScreenToProductsListFragment())
         }
         return binding.root
     }

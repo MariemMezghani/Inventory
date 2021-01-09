@@ -25,16 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.logout_menu, menu)
-        return true
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean{
-        return item.onNavDestinationSelected(this.findNavController(R.id.myNavHostFragment)) || super.onOptionsItemSelected(item)
-
-        }
 
     }
 

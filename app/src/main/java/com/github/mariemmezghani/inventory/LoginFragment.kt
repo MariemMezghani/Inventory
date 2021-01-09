@@ -18,7 +18,7 @@ class LoginFragment : Fragment() {
             inflater, R.layout.fragment_login, container, false
         )
         binding.loginButton.setOnClickListener{view:View->
-            view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToViewPagerFragment())
+            view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToFirstScreen())
         }
         return binding.root
     }
