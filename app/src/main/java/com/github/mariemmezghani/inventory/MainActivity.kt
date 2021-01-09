@@ -5,8 +5,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.onNavDestinationSelected
 import com.github.mariemmezghani.inventory.databinding.ActivityMainBinding
 
 
@@ -15,9 +13,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view=binding.root
+        val view = binding.root
         //make actionbar transparent
-        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
+        )
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         supportActionBar?.setDisplayShowTitleEnabled(false)
         //statubar light color
@@ -26,6 +27,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-    }
+}
 

@@ -7,10 +7,10 @@ import androidx.room.*
 interface
 ProductDatabaseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(product:Product)
+    suspend fun insert(product: Product)
 
     @Update
-    suspend fun update(product:Product)
+    suspend fun update(product: Product)
 
     @Query("SELECT * from product_table WHERE id = :key")
     suspend fun get(key: Long): Product?

@@ -8,21 +8,22 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.github.mariemmezghani.inventory.R
-import com.github.mariemmezghani.inventory.databinding.FragmentFirstScreenBinding
 import com.github.mariemmezghani.inventory.databinding.FragmentSecondScreenBinding
-import com.github.mariemmezghani.inventory.databinding.FragmentViewPagerBinding
 
 
 class SecondScreen : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentSecondScreenBinding>(
             inflater, R.layout.fragment_second_screen, container, false
         )
-        binding.nextButton2.setOnClickListener{view:View ->
-            view.findNavController().navigate(SecondScreenDirections.actionSecondScreenToThirdScreen())
+        binding.nextButton2.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(SecondScreenDirections.actionSecondScreenToThirdScreen())
         }
         return binding.root
     }

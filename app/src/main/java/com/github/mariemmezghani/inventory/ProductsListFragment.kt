@@ -6,10 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
 import com.github.mariemmezghani.inventory.database.ProductDatabase
 import com.github.mariemmezghani.inventory.database.ProductDatabaseDao
 import com.github.mariemmezghani.inventory.databinding.FragmentProductsListBinding
@@ -42,9 +40,11 @@ class ProductsListFragment : Fragment() {
 
         //adapter
         val adapter = ProductListAdapter()
-        binding.recyclerview.adapter=adapter
-        productViewModel.products.observe(viewLifecycleOwner, Observer{it?.let{
-        adapter.submitList(it)}
+        binding.recyclerview.adapter = adapter
+        productViewModel.products.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.submitList(it)
+            }
         })
 
         //menu
@@ -58,13 +58,17 @@ class ProductsListFragment : Fragment() {
         val dataSource = ProductDatabase.getInstance(application).productDatabaseDao
         return dataSource
     }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.logout_menu, menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean{
-        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController()) || super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(
+            item,
+            requireView().findNavController()
+        ) || super.onOptionsItemSelected(item)
 
     }
 }

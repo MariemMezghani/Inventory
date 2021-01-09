@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.github.mariemmezghani.inventory.database.Product
 import com.github.mariemmezghani.inventory.databinding.ProductItemViewBinding
 
-class ProductListAdapter:androidx.recyclerview.widget.ListAdapter<Product,ProductListAdapter.ViewHolder>(ProductDiffUtil()) {
+class ProductListAdapter :
+    androidx.recyclerview.widget.ListAdapter<Product, ProductListAdapter.ViewHolder>(ProductDiffUtil()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -15,11 +16,12 @@ class ProductListAdapter:androidx.recyclerview.widget.ListAdapter<Product,Produc
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-       val item = getItem(position)
+        val item = getItem(position)
         holder.bind(item)
     }
 
-    class ViewHolder private constructor(val binding: ProductItemViewBinding): RecyclerView.ViewHolder(binding.root){
+    class ViewHolder private constructor(val binding: ProductItemViewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
@@ -28,22 +30,23 @@ class ProductListAdapter:androidx.recyclerview.widget.ListAdapter<Product,Produc
                 return ViewHolder(binding)
             }
         }
-       fun bind(item: Product) {
-           binding.product=item
-           binding.executePendingBindings()
 
-       }
+        fun bind(item: Product) {
+            binding.product = item
+            binding.executePendingBindings()
+
+        }
 
     }
 }
 
-class ProductDiffUtil: DiffUtil.ItemCallback<Product>(){
+class ProductDiffUtil : DiffUtil.ItemCallback<Product>() {
     override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
-        return oldItem.id==newItem.id
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
-        return oldItem==newItem
+        return oldItem == newItem
     }
 
 }

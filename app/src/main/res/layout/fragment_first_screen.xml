@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/third_screen"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OnBoarding.FirstScreen">
+    <!-- For simplicity, I used constraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/third_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OnBoarding.FirstScreen">
 
+        <ImageView
+            android:id="@+id/image_inventory"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:padding="@dimen/padding"
+            android:src="@drawable/ic_statistics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/image_inventory"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:padding="@dimen/padding"
-        android:src="@drawable/ic_calculate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/first_screen_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:text="@string/welcome_text"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_inventory" />
 
-    <TextView
-        android:id="@+id/first_screen_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center"
-        android:text="@string/welcome_text"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_inventory" />
+        <TextView
+            android:id="@+id/first_screen_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_wide"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="@string/first_screen_description"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_screen_text" />
 
-    <TextView
-        android:id="@+id/first_screen_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="sans-serif-light"
-        android:gravity="center"
-        android:text="@string/first_screen_description"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_screen_text" />
-
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@android:color/transparent"
-        android:text="@string/Next_button"
-        android:textColor="@color/color_primary"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/Next_button"
+            android:textColor="@color/color_primary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

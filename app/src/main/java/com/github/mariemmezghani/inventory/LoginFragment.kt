@@ -11,14 +11,21 @@ import com.github.mariemmezghani.inventory.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
             inflater, R.layout.fragment_login, container, false
         )
-        binding.loginButton.setOnClickListener{view:View->
-            view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToFirstScreen())
+        binding.loginButton.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(LoginFragmentDirections.actionLoginFragmentToFirstScreen())
+        }
+        binding.registerButton.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(LoginFragmentDirections.actionLoginFragmentToFirstScreen())
         }
         return binding.root
     }

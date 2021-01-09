@@ -9,20 +9,20 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(tableName = "product_table")
-data class Product (
+data class Product(
     @PrimaryKey(autoGenerate = true)
-    var id:Long = 0L,
+    var id: Long = 0L,
     @ColumnInfo(name = "name")
-    var name:String = "product",
+    var name: String = "product",
 
-    @ColumnInfo(name="quantity")
-    var quantity:Int = 0,
+    @ColumnInfo(name = "quantity")
+    var quantity: Int = 0,
 
-   @ColumnInfo(name = "description")
-    var description:String="",
+    @ColumnInfo(name = "description")
+    var description: String = "",
 
     @ColumnInfo(name = "stock_price")
-    var stock_price : Double = 0.0
+    var stock_price: Double = 0.0
 
     //var image:Image="@drawable/ic_email"
-):Parcelable
+) : Parcelable

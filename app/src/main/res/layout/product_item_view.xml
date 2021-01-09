@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="product"
-            type="com.github.mariemmezghani.inventory.database.Product"/>
+            type="com.github.mariemmezghani.inventory.database.Product" />
     </data>
-
+    <!-- I used ConstrainLayout because it is better here than using nested layouts-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="6dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -24,8 +26,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="@dimen/margin_half"
+                android:layout_marginEnd="@dimen/margin_half"
                 android:fontFamily="@font/rubik_medium"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -34,15 +36,14 @@
                 app:layout_constraintTop_toTopOf="@+id/product_image"
                 app:setProductName="@{product}" />
 
-        <ImageView
-            android:id="@+id/product_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:elevation="20dp"
-            android:src="@drawable/ic_ecommerce_box"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_ecommerce_box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/quantity_item_text"
@@ -69,4 +70,4 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-    </layout>
+</layout>
