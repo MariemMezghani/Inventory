@@ -21,6 +21,7 @@
 
         <EditText
             android:id="@+id/product_name"
+            android:text="@={product.name}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -99,6 +100,7 @@
 
         <EditText
             android:id="@+id/quantity_edittext"
+            android:text="@={`` + product.quantity}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -127,6 +129,7 @@
 
         <EditText
             android:id="@+id/stock_price_edittext"
+            android:text="@={`` + product.stock_price}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -155,6 +158,7 @@
 
         <EditText
             android:id="@+id/description_edittext"
+            android:text="@={product.description}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
