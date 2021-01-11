@@ -2,8 +2,9 @@ package com.github.mariemmezghani.inventory
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
@@ -11,11 +12,13 @@ import androidx.navigation.ui.NavigationUI
 import com.github.mariemmezghani.inventory.database.ProductDatabase
 import com.github.mariemmezghani.inventory.database.ProductDatabaseDao
 import com.github.mariemmezghani.inventory.databinding.FragmentProductsListBinding
+import com.github.mariemmezghani.inventory.databinding.ProductItemViewBinding
 import com.github.mariemmezghani.inventory.viewModel.ProductViewModel
 import com.github.mariemmezghani.inventory.viewModel.ProductViewModelFactory
 
-class ProductsListFragment : Fragment() {
 
+class ProductsListFragment : Fragment() {
+    private lateinit var parent: ViewGroup
     private val productViewModel: ProductViewModel by activityViewModels {
         ProductViewModelFactory(
             getDatabase()
@@ -27,6 +30,9 @@ class ProductsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        if (container != null) {
+            parent = container
+        }
         val binding = DataBindingUtil.inflate<FragmentProductsListBinding>(
             inflater, R.layout.fragment_products_list, container, false
         )
@@ -37,13 +43,25 @@ class ProductsListFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.viewModel = productViewModel
-
+        /**
+         * As per requirements ,do not use Recyclerview, must use Scrollview
+         * and inflate layouts manually
+         */
         //adapter
-        val adapter = ProductListAdapter()
-        binding.recyclerview.adapter = adapter
+        //val adapter = ProductListAdapter()
+        // binding.recyclerview.adapter = adapter
         productViewModel.products.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.submitList(it)
+                //adapter.submitList(it)
+                for (product in it) {
+                    val productBinding = DataBindingUtil.inflate<ProductItemViewBinding>(
+                        layoutInflater, R.layout.product_item_view, parent, false
+                    )
+                    productBinding.product = product
+                    binding.listProducts.addView(productBinding.root)
+                }
+
+
             }
         })
 
