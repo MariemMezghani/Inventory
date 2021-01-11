@@ -53,6 +53,9 @@ class ProductsListFragment : Fragment() {
         productViewModel.products.observe(viewLifecycleOwner, Observer {
             it?.let {
                 //adapter.submitList(it)
+                //clear the list
+                binding.listProducts.removeAllViews()
+                //add the list when new elements are triggered
                 for (product in it) {
                     val productBinding = DataBindingUtil.inflate<ProductItemViewBinding>(
                         layoutInflater, R.layout.product_item_view, parent, false
