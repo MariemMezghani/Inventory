@@ -3,6 +3,15 @@ This is the first project in the Kotlin Android Developer Nanodegree.
 The inventory app allows the user to save products of his store in a database and retrieve the list of all products and their details in the main page. 
 The listing page will show the list of products and show a button for adding a new product, while the detail page will be for adding a product entry.
 
+# Screenshots
+
+![login](https://user-images.githubusercontent.com/35550711/104305853-80bf9480-54cd-11eb-9c72-2120023aeed5.jpg)   ![first](https://user-images.githubusercontent.com/35550711/104306417-34288900-54ce-11eb-86e8-2204e53edd2c.jpg)
+
+
+
+
+
+
 # Dependencies
     // Room and Lifecycle dependencies
     implementation "androidx.room:room-runtime:$version_room"
